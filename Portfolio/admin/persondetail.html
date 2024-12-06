@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Mental Health</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+
+        header {
+            background-color: #2d2d2d;
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        header .logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .week-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .week-controls button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .week-controls button:hover {
+            background-color: #45a049;
+        }
+
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .calendar .day {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .calendar .day.filled {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .feelings-box {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feelings-box p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .icon {
+            width: 100px; /* ลดขนาดเป็น 100px */
+            height: auto; /* ให้รักษาอัตราส่วนเดิม */
+            display: block;
+           
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">PARK JAI</div>
+    </header>
+    <div class="container">
+        <h1>บันทึกประจำวัน</h1>
+        <h2> Developer Department</h2>
+        <h3>นาย เบญญาภา ศรีปา</h3>
+        <div class="container">
+            <div class="icon-section">
+                <img src="images/2954893.png" alt="Thumbs Up" class="icon">
+            </div>
+            <div class="text-section">
+                <h2>พลังใจ: ดีมาก</h2>
+                <p>จาก: 30 วันล่าสุด</p>
+            </div>
+            <div class="comparison-text">
+                <p>พลังใจดีขึ้น เมื่อเทียบกับ เดือนแล้ว</p>
+            </div>
+        </div>
+        <!-- Week Controls -->
+        <div class="week-controls">
+            <button id="prevWeek"><< ย้อนหลัง</button>
+            <h4 id="weekRange">Week: Loading...</h4>
+            <button id="nextWeek">ถัดไป >></button>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar" id="calendar"></div>
+
+        <!-- Feelings Section -->
+        <div class="feelings-box" id="feelingsBox">
+            <p>กรุณาเลือกวันที่เพื่อดูความรู้สึก</p>
+        </div>
+    </div>
+
+    <script>
+        const calendar = document.getElementById("calendar");
+        const feelingsBox = document.getElementById("feelingsBox");
+        const weekRange = document.getElementById("weekRange");
+        const prevWeekButton = document.getElementById("prevWeek");
+        const nextWeekButton = document.getElementById("nextWeek");
+
+        // Mock dailyFeelings data
+        const dailyFeelings = {
+            "2024-11-15": { feeling: "มีความสุข", note: "วันนี้ดีมาก!" },
+            "2024-11-16": { feeling: "ปกติ", note: "ไม่มีอะไรพิเศษ" },
+            "2024-11-20": { feeling: "เหนื่อย", note: "งานหนักมาก" },
+            "2024-11-21": { feeling: "สบายใจ", note: "วันพักผ่อน" },
+        };
+
+        let currentDate = new Date(); // Start with the current date
+
+        // Render Calendar for the Week
+        function renderCalendar() {
+            calendar.innerHTML = ""; // Clear calendar content
+            const daysToShow = 7;
+            const startDate = new Date(currentDate);
+            startDate.setDate(currentDate.getDate() - currentDate.getDay()); // Move to Sunday of the current week
+
+            // Update week range
+            const endDate = new Date(startDate);
+            endDate.setDate(startDate.getDate() + daysToShow - 1);
+
+            const start = startDate.toLocaleDateString("th-TH", { day: "2-digit", month: "short" });
+            const end = endDate.toLocaleDateString("th-TH", { day: "2-digit", month: "short" });
+            weekRange.textContent = `Week: ${start} - ${end}`;
+
+            for (let i = 0; i < daysToShow; i++) {
+                const date = new Date(startDate);
+                date.setDate(startDate.getDate() + i);
+
+                const formattedDate = date.toISOString().split("T")[0]; // Format YYYY-MM-DD
+                const dayDiv = document.createElement("div");
+                dayDiv.className = "day";
+                dayDiv.textContent = date.getDate(); // Display day of the month
+
+                if (dailyFeelings[formattedDate]) {
+                    dayDiv.classList.add("filled");
+                }
+
+                dayDiv.addEventListener("click", () => selectDate(formattedDate));
+                calendar.appendChild(dayDiv);
+            }
+        }
+
+        // Select a date and show feelings
+        function selectDate(date) {
+            const feelingData = dailyFeelings[date];
+            if (feelingData) {
+                feelingsBox.innerHTML = `
+                    <p><strong>วันที่:</strong> ${date}</p>
+                    <p><strong>ความรู้สึก:</strong> ${feelingData.feeling}</p>
+                    <p><strong>หมายเหตุ:</strong> ${feelingData.note}</p>
+                `;
+            } else {
+                feelingsBox.innerHTML = `<p>ไม่มีข้อมูลสำหรับวันที่ ${date}</p>`;
+            }
+        }
+
+        // Change the week
+        prevWeekButton.addEventListener("click", () => {
+            currentDate.setDate(currentDate.getDate() - 7); // Move back 7 days
+            renderCalendar();
+        });
+
+        nextWeekButton.addEventListener("click", () => {
+            currentDate.setDate(currentDate.getDate() + 7); // Move forward 7 days
+            renderCalendar();
+        });
+
+        renderCalendar();
+    </script>
+</body>
+</html>
