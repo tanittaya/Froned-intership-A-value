@@ -3,41 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="port.css">
-    
+    <title>Document</title>\
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <div class="container"> 
-    <div class="navbar">
-        <ul>
-            <li><a href="#Me">Know about Me</a></li>
-            <li><a href="#passion">My passion</a></li>
-            <li><a href="#hobby">Hobby</a></li>
-            <li><a href="#portfolio"> Portfolio</a></li>
-          </ul>
-    </div>
     <div class="background">
         <div class="slideshow">
-            <img src="img/istockphoto-1061786490-612x612.jpg" alt="Image 1">
-            <img src="img/skyimg.jpg" alt="Image 2">
-            <img src="img/sea.jpg" alt="Image 3">
+            <img src="img/front-cover.png" alt="Image 1">
+            <img src="img/code.png" alt="Image 2">
+            <img src="img/back-cover.png" alt="Image 3">
         </div>
         <h2>
-            HELLO, I am 
-            <span style="color: rgb(245, 255, 57)">VIEW</span>
-            <br> Frontend development internship
+            <span class="hello">HELLO</span>
+            <span class="i-am">I am <span class="view">VIEW</span>
+            </span>
+            <span class="internship">Frontend development internship</span>
         </h2>
     </div>
-    
-    <div class="me" id="Me">
-        <div class="image-box">
-            <img src="img/withbackground.jpg" alt="Image in Box">
+    <div class="navbar">
+        <a href="#me" class="nav-button">
+          <i class="icon bi bi-house"></i>
+          <img src="img/home (1).png" alt="home sec">
+          <span class="label">Home</span>
+        </a>
+        <a href="#resume" class="nav-button">
+          <i class="icon bi bi-person"></i>
+          <img src="img/resume.png" alt="home sec">
+          <span class="label">Resume</span>
+        </a>
+        <a href="#skill" class="nav-button">
+          <i class="icon bi bi-images"></i>
+          <img src="img/skill.png" alt="home sec">
+          <span class="label">Skill</span>
+        </a>
+        <a href="#mypassion" class="nav-button">
+          <i class="icon bi bi-envelope"></i>
+          <img src="img/passion.png" alt="home sec">
+          <span class="label">Passion</span>
+        </a>
+      </div>
+    </div>
+    <div class="me" id="me">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="img/view1.jpg" alt="Front Image">
+                </div>
+                <div class="flip-card-back">
+                    <img src="img/view2.jpg" alt="Back Image">
+                </div>
+            </div>
         </div>
-     
+    </div>    
     <div class="detail">
         <h2>Tanittaya Yonwong </h2>
-        <h3><span class="view">❤️ VIEW ❤️</span></h3>
+        <h3><span class="view">🌸🌸 VIEW 🌸🌸</span></h3>
     </div>
     <div class="infrom">
         <div class="motto">
@@ -51,63 +72,83 @@
                 Hi, I'm View, glad to introduce you guys to know me. 
                 I'm a girl who wants to live freely and meet people I like flowers, or whatever colorful.
             </p>
-          
         </div>
-    
-
     </div>
-    <div class="Knowme" id="Me">
-        <h1> let's know about me </h1>  
-        <p>Name : Tanittaya Yonwong <br> Nickname :View <br> Birthday : 16 Fabruary 2005 <br> Age:19 <br> Favorite color : Pink</p><br>
-        <h1>My contact</h1>
-<div class="icon">
-    <a href="https://dict.longdo.com/search/tel/" target="_blank">
-        <img src="img/tel.png" alt="Tel">
-        <span>Tel: 0808261585</span>
-    </a>
-    <a href="https://www.instagram.com/" target="_blank">
-        <img src="img/Instagram_logo_2022.svg.png" alt="Instagram">
-        <span>IG: view.eee</span>
-    </a>
-    <a href="https://www.facebook.com/?locale=th_TH" target="_blank">
-        <img src="img/2023_Facebook_icon.svg" alt="Facebook">
-        <span>Facebook: Tanittaya Yonwong</span>
-    </a>
-</div>
-
-      
-                
-        
-        <div class="education">
+    
+    <div class="know-me" id="resume">
+        <span class="about-me">About me</span>
+        <h2>MY INFORMATION:</h2>
+        <div class="block-inform">
+          <div class="item-inform">
+            <span class="label">⟩ Name:</span>
+            <span>Tanittaya Yonwong</span>
+          </div>
+          <div class="item-inform">
+            <span class="label">⟩ Nickname:</span>
+            <span>View</span>
+          </div>
+          <div class="item-inform">
+            <span class="label">⟩ Birthday:</span>
+            <span>16 February 2005</span>
+          </div>
+          <div class="item-inform">
+            <span class="label">⟩ Age:</span>
+            <span>19</span>
+          </div>
+          <div class="item-inform">
+            <span class="label">⟩ Studying:</span>
+            <span>Chiang Mai University, Thailand</span>
+          </div>
+          <div class="item-inform">
+            <span class="label">⟩ E-mail:</span>
+            <span>view.tnittayaw@gmail.com</span>
+          </div>
+        </div>
+        <div class="contact">
+            <h2>MY CONTACT :</h2>
+            <div class="icon">
+                <a href="tel:0808261485">
+                    <img src="img/tel.png" alt="Tel Icon">
+                    <span>Tel: 0808261485</span>
+                </a>
+                <a href="https://www.instagram.com/" ">
+                    <img src="img/Instagram_logo_2022.svg.png" alt="Instagram">
+                    <span>IG: view.eee</span>
+                </a>
+                <a href="https://www.facebook.com/?locale=th_TH" ">
+                    <img src="img/2023_Facebook_icon.svg" alt="Facebook">
+                    <span>Facebook: Tanittaya Yonwong</span>
+                </a>
+            </div>
+        </div>
+     </div>
+        <div class="education" >
             <h1>📚 Education</h1>
             <div class="education-container">
-                <div class="education-item">
-                    <img src="img/daraacademe.png" alt="Dara Academy">
-                    <a href="https://sites.google.com/web1.dara.ac.th/dara2020" class="btn primary">Dara Academy, 2020</a>
-                    <p>Graduated from Dara Academy School since 2022</p>
-                    <p>With cumulative GPAX 3.46</p>
-                    <p>My favorite subjects: Chemistry, English, Chinese, Computer</p>
-                </div>
-                <div class="education-item">
-                    <img src="img/cmu..jpg" alt="Chiang Mai University">
-                    <a href="https://www.cmu.ac.th" class="btn primary">Chiang Mai University, 2023</a>
-                    <p>Now I'm studying at Chiang Mai University Year 2</p>
-                    <p>College of Arts, Media and Technology</p>
-                    <p>Major: Digital Industry Integration (DII)</p>
-                </div>
-                <div class="education-item">
-                    <img src="img/a_value_logo.jpg" alt="A-value"><br>
-                    <a href="https://www.avalue.co.th/" class="btn primary">A-value, Now</a>
-                    <p>Internship at A-value Company</p>
-                    <p>Position: Frontend Developer</p>
-                    <p>Internship period: 1 year 4 months</p>
-                </div>
+            <div class="education-item">
+                <img src="img/daraacademe.png" alt="Dara Academy">
+                <a href="https://sites.google.com/web1.dara.ac.th/dara2020" class="btn primary">Dara Academy, 2020</a>
+                <p>Graduated from Dara Academy School since 2022</p>
+                <p>With cumulative GPAX 3.46</p>
+                <p>My favorite subjects: Chemistry, English, Chinese, Computer</p>
             </div>
-            
+            <div class="education-item">
+                <img src="img/cmu..jpg" alt="Chiang Mai University">
+                <a href="https://www.cmu.ac.th" class="btn primary">Chiang Mai University, 2023</a>
+                <p>Now I'm studying at Chiang Mai University Year 2</p>
+                <p>College of Arts, Media and Technology</p>
+                <p>Major: Digital Industry Integration (DII)</p>
+            </div>
+            <div class="education-item">
+                <img src="img/a_value_logo.jpg" alt="A-value"><br>
+                <a href="https://www.avalue.co.th/" class="btn primary">A-value, Now</a>
+                <p>Internship at A-value Company</p>
+                <p>Position: Frontend Developer</p>
+                <p>Internship period: 1 year 4 months</p>
+            </div>
         </div>
-
     </div>
-    <div class="Portfolio">
+    <div class="Portfolio" id="skill">
         <div class="Myskill">
             <h1>My work skills</h1>
             <div class="skills-container">
@@ -172,35 +213,29 @@
                     <span class="percentage">50%</span>
                 </div>
             </div>
-
         </div>
-        <div class="Project" id="portfolio">
-            <h2>My Portfolio</h2>
-            <div class="Project-container">
-                <h2>PROJECT</h2>
-                <div class="buttoncontainer">
-                    <a href="adminchart.html" class="btn-with-image">
-                        <img src="img/addmin.png" alt="Image 1">
-                        <span>Click here to visit my project</span>
-                    </a>
-                    <a href="page2.html" class="btn-with-image">
-                        <img src="img/Screenshot 2024-12-06 120522.png" alt="Image 2">
-                        <span>Click here to visit my project</span>
-                    </a>
-                    <a href="page3.html" class="btn-with-image">
-                        <img src="img/Screenshot 2024-12-06 134628.png" alt="Image 3">
-                        <span>Click here to visit my project</span>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-        
-
     </div>
-
-    <div class="passion" id="passion">
+    <div class="Project" id="portfolio">
+        <h2>My Portfolio</h2>
+        <div class="Project-container">
+            <h2>PROJECT</h2>
+            <div class="buttoncontainer">
+                <a href="adminchart.html" class="btn-with-image">
+                    <img src="img/addmin.png" alt="Image 1">
+                    <span>Click here to visit my project</span>
+                </a>
+                <a href="page2.html" class="btn-with-image">
+                    <img src="img/Screenshot 2024-12-06 120522.png" alt="Image 2">
+                    <span>Click here to visit my project</span>
+                </a>
+                <a href="page3.html" class="btn-with-image">
+                    <img src="img/Screenshot 2024-12-06 134628.png" alt="Image 3">
+                    <span>Click here to visit my project</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="passion" id="mypassion">
         <h1>My Passion</h1>
         <p>This table show place and continent wich i want visit once</p>
         <div class="table">
@@ -225,7 +260,13 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td><span style="position: relative;">✔️</span></td>
+                  <td>
+                    <span class="check-mark">✔️
+                        <div class="tooltip">
+                            <img src="img/stone-age.jpg" alt="Europe Map">
+                        </div>
+                    </span>
+                  </td>
                   <td></td>
                   <td> </td>
                  
@@ -236,14 +277,26 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>✔️</td>
+                    <td>
+                        <span class="check-mark">✔️
+                            <div class="tooltip">
+                                <img src="img/switzweland.jpg" alt="switzerland Map">
+                            </div>
+                        </span>
+                    </td>
                     <td></td>
                     <td> </td>
                    
                   </tr>
                   <tr>
                     <td>China  </td>
-                    <td>✔️</td>
+                    <td>
+                        <span class="check-mark">✔️
+                            <div class="tooltip">
+                                <img src="img/chinatraveller.jpg" alt="china Map">
+                            </div>
+                        </span>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -259,7 +312,13 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td>✔️</td>
+                    <td>
+                        <span class="check-mark">✔️
+                            <div class="tooltip">
+                                <img src="img/australia.jpg" alt="austalia Map">
+                            </div>
+                        </span>
+                    </td>
                     <td> </td>
                    
                   </tr>
@@ -269,7 +328,13 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><span style="position: relative;">✔️</span></td>
+                    <td>
+                        <span class="check-mark">✔️
+                        <div class="tooltip">
+                            <img src="img/grece.jpg" alt="grece Map">
+                        </div>
+                        </span>
+                    </td>
                     <td></td>
                     <td> </td>
                    
@@ -277,7 +342,13 @@
                   <tr>
                     <td>The United States of America</td>
                     <td></td>
-                    <td>✔️</td>
+                    <td>
+                        <span class="check-mark">✔️
+                            <div class="tooltip">
+                                <img src="img/uas-rushmore.jpg" alt="usa Map">
+                            </div>
+                        </span>
+                    </td>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -319,63 +390,11 @@
                 <a href="https://imaginetourservice.com/europe-tour.html" class="linkbut">Click here to find trip</a>
             </div>
         </div>
-
-        
     </div>
-    <div class="hobby-container" id="hobby">
-        <h1 class="hobby-title">HOBBY</h1>
-        <p class="hobby-description">
-            I usually love to go on adventures to discover new things, whether it's a place I've never seen or an experience I've never had, like these videos and photos that capture my travel memories. One of my most memorable places is Doi Inthanon, where the beautiful nature and refreshing atmosphere made this trip extra special. 🌄✨
-        </p>
-        <div class="video">
-            <video autoplay muted loop class="hobby-video">
-                <source src="video/89a3e077-838f-4d81-89ce-2f81bcad33e8.mp4" type="video/mp4">
-            </video>
-            <video autoplay muted loop class="hobby-video">
-                <source src="video/b72e3c5b-032d-4875-9552-b9a7b5ad798e.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="image">
-            <img src="img/150ce0bc-61fe-43cc-b890-fd16ec9ae8c4.jpg" alt="Photography Equipment" class="hobby-image">
-            <img src="img/8bc73edb-4652-48da-8fd9-e7f521840419.jpg" alt="Photography Equipment" class="hobby-image">
-        </div>
-        <div class="text">
-            <h2 class="hobby-subtitle">My Hobby</h2>
-            <p class="hobby-text">
-                In my free time, my friends and I like to drive up to the mountains because we want to relax our minds, bodies, and eyes. Breathing fresh air without smog and looking at the mountains helps us relieve stress. Nature heals us when we are stressed. If you have free time, I suggest you take a trip to the mountains in Chiang Mai. It might help improve your mental health.
-            </p>
-            <a href="https://youtu.be/WvvTgiOXiAQ?si=Z00ND-UjljknoR_T" class="read-more-button">SEE VIDEO TO RELEASE YOUR STRESS</a>
-        </div>
-    </div>
-    <div class="changpage">
-    <a href="portpage2.html" class="more-activity">See More My Activity</a>
+    <div class="changpage-btn">
+        <a href="page-hobby.html" class="btn-style">Let's see my hobby >>></a>
+    </div>    
+    
 </div>
-
-    
-    
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </div>
-</div>
-    
 </body>
 </html>
