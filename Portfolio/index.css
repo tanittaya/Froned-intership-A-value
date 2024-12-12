@@ -1,16 +1,11 @@
-body {
+.body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
 }
-
-
 .sidebar {
     margin-left: 50px;
-
 }
-
-
 .menu-item {
     width: 80px;
     height: 80px;
@@ -59,14 +54,6 @@ body {
 
 .menu-item.active .text {
     color: #fff;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f4f5;
-    color: white;
 }
 .navbar {
     position: fixed;
@@ -685,6 +672,10 @@ body {
         grid-column: span 1;
     }
 }
+.hello{
+    position: relative;
+    height: 500px;
+}
 
 .Project {
     text-align: center;
@@ -692,10 +683,12 @@ body {
     background-color: #ffd1e5;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
     max-width: 1200px;
-    margin-left: 270px;
     height: 480px;
+    position: absolute;
+    right: 0px;
+    
+
 }
 
 .Project h2 {
