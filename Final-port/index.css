@@ -1,11 +1,115 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 20px;
+}
+
+.container-inform {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
+
+
+/* คอลัมน์ซ้าย */
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flip-card {
+    width: 100%;
+    max-width: 300px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.detail h2, .detail h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* คอลัมน์ขวา */
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.motto, .know-me {
+    margin-bottom: 20px;
+}
+
+.block-inform, .contact {
+    margin-top: 20px;
+}
+
+.icon a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.icon a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.icon a:hover {
+    color: #007BFF;
+}
+
+.about-me {
+    font-size: 18px;
+    font-weight: bold;
+    
+    margin-bottom: 10px;
+}
 .body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f5f5f5;
 }
-.container{
-    width: 100dvw;
-}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -186,26 +290,14 @@
     max-height: 85%;
     border-radius: 5px;
 }
-.detail {
-    font-size: 15px;
-    color: #060707;
-    margin-top: 20px;
-    margin-left: 320px;
-}
 .view {
     margin-left: 33px;
 }
-.motto {
-    margin-top: -500px;
-    margin-left: 650px;
-    border-radius: 10px;
-    color: #060707;
-    max-width: 600px;
-}
+
 .motto h2 {
     color: #28a745;
     font-size: 24px;
-    margin-bottom: 10px;
+    margin:80px 0px 10px 0px;
 }
 .motto p {
     font-size: 16px;
@@ -215,10 +307,6 @@
     border-bottom: 1px solid #000;
     padding-bottom: 15px;
     display: block;
-}
-
-.know-me {
-    color: #313131;
 }
 .about-me{
         color: #2b2b2b;
@@ -257,17 +345,8 @@
     font-size: 16px;
     margin: 5px;
 }
-.contact {
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-}
 
-.contact h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+
 .icon {
     display: flex;
     flex-direction: column; 
@@ -342,33 +421,7 @@
         width: 200px;
         height: 200px;
     }
-
-    .motto {
-        padding: 15px;
-        font-size: 14px;
-    }
-
-    .motto h2 {
-        font-size: 20px;
-    }
-
-    .motto p {
-        font-size: 14px;
-    }
 }
-/* 
-.btn {
-    position: relative;
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-} */
-
-/* สไตล์ปุ่มทั่วไป */
 .btn-primary {
     background-color: #efa375;
     color: #fff;
@@ -381,13 +434,11 @@
     transition: all 0.3s ease;
 }
 
-/* ปุ่มใน .education-item */
+
 .education-item .btn-primary {
     width: 100%;
     margin-top: 10px;
 }
-
-/* ปุ่มใน .placename และ .placename2 */
 .placename .btn-primary,
 .placename2 .btn-primary {
     background-color: #efa375;
@@ -397,21 +448,15 @@
     margin-top: 20px;
     border-radius: 20px;
 }
-
-/* สไตล์เมื่อ hover */
 .placename .btn-primary:hover,
 .placename2 .btn-primary:hover {
     background-color: rgb(210, 127, 219);
     transform: scale(1.05);
 }
-
-/* สไตล์เมื่อ active */
 .placename .btn-primary:active,
 .placename2 .btn-primary:active {
     transform: scale(1);
 }
-
-/* ปรับตำแหน่งรูปภาพให้ขึ้นอยู่บนข้อความ */
 .education-item,
 .placename,
 .placename2 {
@@ -758,12 +803,6 @@ body {
 
 }
 
-.know-me {
-    max-width: 800px;
-    margin: 415px 0px 0px 650px;
-    padding: 20px;
-}
-
 .know-me h2 {
     margin: 60px 0 20px;
     font-size: 24px;
@@ -856,3 +895,4 @@ body {
 .btn-style:hover:before {
     opacity: 1;
 }
+
