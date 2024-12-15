@@ -1,2 +1,6 @@
-img/
-video/
+*
+!Portfolio-final/adminchart.html
+!Portfolio-final/index.html
+!Portfolio-final/index.css
+!Portfolio-final/page-hobby.html
+!Portfolio-final/page-hobby.css
